@@ -1,0 +1,47 @@
+<div className="auth-form-container">
+    <form className="register-form" (ngSubmit)="onSubmit()">
+        
+         <label htmlFor="username">User Name:</label><br>
+          <input type="text" id="username" name="username" required minlength="3" maxlength="25" [(ngModel)]="username" #usernameInput="ngModel"><br>
+          <div *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+            <div *ngIf="usernameInput.errors?.['required']">Username is required.</div>
+            <div *ngIf="usernameInput.errors?.['minlength']">Username must be at least 3 characters long.</div>
+            <div *ngIf="usernameInput.errors?.['maxlength']">Username cannot be more than 25 characters long.</div>
+          </div>
+          
+        
+            <label htmlFor="password">Password:</label><br>
+          <input type="password" id="password" name="password" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="password" #passwordInput="ngModel"><br>
+          <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+            <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+            <div *ngIf="passwordInput.errors?.['minlength']">Password must be at least 8 characters long.</div>
+            <div *ngIf="passwordInput.errors?.['pattern']">Password must contain at least one uppercase letter, one lowercase letter, and one number.</div>
+          </div>
+          
+
+          <label htmlFor="contact">Contact:</label><br>
+          <input type="text" id="contact" name="contact" required [(ngModel)]="contact" #contactInput="ngModel"><br>
+          <div *ngIf="contactInput.invalid && (contactInput.dirty || contactInput.touched)">
+            <div *ngIf="contactInput.errors?.['required']">Contact is required.</div>
+          </div>
+          
+
+          <label htmlFor="birthdate">Birthdate:</label><br>
+          <input type="date" id="birthdate" name="birthdate" required [(ngModel)]="birthdate" #birthdateInput="ngModel"><br>
+          <div *ngIf="birthdateInput.invalid && (birthdateInput.dirty || birthdateInput.touched)">
+            <div *ngIf="birthdateInput.errors?.['required']">Birthdate is required.</div>
+          </div>
+          <br>
+        
+        <button type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      </form>
+      <br>
+      <button type="button" style="background: none; color: white; text-decoration: underline;" routerLink="/">Already have an account? Log In Here.</button>
+      <br>
+      <br>
+      <button type="button" style="background: none; color: white; text-decoration: underline;" routerLink="/adminloginpage">Are you Admin? Log In Here...</button>
+    <!-- <button type="button" style="background: none; color: white; text-decoration: underline;">Already have an account? Log In Here.</button><br>
+    <button type="button" style="background: none; color: white; text-decoration: underline;">Are you Admin? Log In Here...</button><br> 
+         -->
+    </div>
+

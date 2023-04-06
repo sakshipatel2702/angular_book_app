@@ -1,0 +1,31 @@
+.auth-form-container, .login-form, .register-form, .admin-login-form{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  label{
+    text-align: left;
+    padding: 0.25rem 0;
+  }
+  
+  input{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  button {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .link-btn{
+  background: none;
+  color: white;
+  text-decoration: underline;
+  }
+  

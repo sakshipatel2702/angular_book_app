@@ -1,5 +1,5 @@
 <div className="auth-form-container">
-    <form className="login-form" (ngSubmit)="onSubmit()">
+    <form className="login-form" (ngSubmit)="loginUser($event)">
         
          <label htmlFor="username">User Name:</label><br>
           <input type="text" id="username" name="username" required minlength="3" maxlength="25" [(ngModel)]="username" #usernameInput="ngModel"><br>
